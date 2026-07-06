@@ -1,4 +1,4 @@
-<title>The Comeback of the Hit — Netflix Catalog Concentration</title>
+<title>The Other 96% — Netflix Catalog Concentration</title>
 <style>
 @font-face {
   font-family: "Fraunces Display";
@@ -207,7 +207,7 @@ h1 {
 .chart-annot { fill: var(--ink-muted); font-family: "Work Sans App", sans-serif; font-size: 11.5px; }
 .chart-dot { stroke: var(--surface-raised); stroke-width: 2; }
 .crosshair { stroke: var(--border-strong); stroke-width: 1; opacity: 0; pointer-events: none; }
-.hover-dot { fill: var(--chart-top10); stroke: var(--surface-raised); stroke-width: 2; opacity: 0; pointer-events: none; }
+.hover-dot { fill: var(--chart-top100); stroke: var(--surface-raised); stroke-width: 2; opacity: 0; pointer-events: none; }
 .hit-col { fill: transparent; cursor: crosshair; }
 
 .tooltip {
@@ -338,8 +338,8 @@ footer a { color: var(--ink-secondary); }
 
   <header class="masthead">
     <p class="eyebrow">Discovery Effectiveness &middot; Netflix Engagement Data, 2023&ndash;2025</p>
-    <h1>The Comeback of the Hit</h1>
-    <p class="dek">Netflix publishes hours watched for every title it carries. Read as a discovery measure rather than a ratings list, the last six reports tell a story Netflix hasn't: after spreading out through 2023 and 2024, viewing swung back toward the top across every measure computable from the data, capped by a single title crossing a line no title had crossed before.</p>
+    <h1>The Other 96%</h1>
+    <p class="dek">Netflix's recommendation engine has one job: make a library of over 16,000 titles feel infinite to viewers. Its own disclosures suggest it isn't quite managing that. About 700 titles, roughly 4% of the catalog, account for half of everything watched. What's happening to the other 96% is the more interesting problem, one the data can describe but not fully explain.</p>
     <div class="hero-stat">
       <p class="hero-figure">4.4%</p>
       <p class="hero-figure-note">of the roughly 16,500 titles with any viewership in late 2025 account for <strong>half</strong> of all hours watched on Netflix. That figure, 713 to 730 titles, has barely moved across three years of Netflix's own disclosures.</p>
@@ -348,7 +348,7 @@ footer a { color: var(--ink-secondary); }
 
   <section class="card">
     <div class="card-head">
-      <h2>Top 10 titles' share of all hours watched</h2>
+      <h2>Top 100 titles' share of all hours watched</h2>
       <p class="card-sub">Percent of total viewing hours per half-year report, worldwide</p>
     </div>
     <div class="chart-wrap">
@@ -365,10 +365,10 @@ footer a { color: var(--ink-secondary); }
       <svg class="spark" data-key="top1title" viewBox="0 0 220 40" preserveAspectRatio="none"></svg>
     </article>
     <article class="tile">
-      <p class="tile-label">Share held by the top 100 titles</p>
-      <p class="tile-value" style="color:var(--chart-top100)">20.82%</p>
-      <p class="tile-note">Also a series high, up from 18.19% at the 2024 low</p>
-      <svg class="spark" data-key="top100" viewBox="0 0 220 40" preserveAspectRatio="none"></svg>
+      <p class="tile-label">Share held by the top 10 titles</p>
+      <p class="tile-value" style="color:var(--chart-top10)">6.44%</p>
+      <p class="tile-note">Also a series high, up from 4.07% at the 2023 low</p>
+      <svg class="spark" data-key="top10" viewBox="0 0 220 40" preserveAspectRatio="none"></svg>
     </article>
     <article class="tile">
       <p class="tile-label">Share held by the top 1% of titles</p>
@@ -380,9 +380,9 @@ footer a { color: var(--ink-secondary); }
 
   <section class="insight">
     <h2>What this means</h2>
-    <p>Concentration is a reasonable proxy for discovery. If personalization is doing its job, attention should spread wider over time, not less. On the measures that track hits, Netflix's own numbers move the other way: the share of hours held by the top 1, 10, 100, and 200 titles all fell for about a year, then reversed hard, each hitting a new high in the second half of 2025.</p>
     <p>Worth naming what this data can't show: personalization systems are typically tuned and tested against popular titles, the ones with enough signal to optimize on. What actually happens to a title with a thousand views instead of a million is rarely disclosed anywhere, including here. This is a Netflix number, not necessarily a Netflix-only pattern, no other major platform shows its work at this resolution.</p>
-    <p>The sharper detail is where the reversal is coming from. The number of titles needed to reach 80% and 90% of all hours also ticked up over the same stretch (2,628 to 2,884, and 4,446 to 4,915), which means the broad middle of the catalog, roughly ranks 200 to 3,000, held its ground or grew slightly. What's actually shrinking is the deep tail beneath that: thousands of niche titles splitting a slice of attention that keeps getting thinner. Whether that's a discovery failure (these titles aren't being surfaced to the people who'd want them) or a content problem (they are, and it isn't landing) isn't something this data can separate. What it does show is that whichever it is, it's getting worse for the tail specifically, not the catalog as a whole.</p>
+    <p>For the other 96% of titles, there are two very different explanations, and the numbers alone can't separate them: either these titles aren't being surfaced to the people who'd actually want them (a discovery problem), or they're being surfaced fine and still not landing (a content problem, the worse of the two). A third explanation, that overall engagement is simply declining, doesn't hold up: total hours watched has stayed within a narrow band, 90 to 96.2 billion, across all six periods, trending up if anything. Whatever is happening to the tail isn't a platform-wide slowdown.</p>
+    <p>What should worry Netflix either way is that the split isn't holding steady. The top 100 titles' share of all hours fell for about a year, then reversed hard, hitting a series high in the second half of 2025. The number of titles needed to reach 80% and 90% of all hours ticked up over the same stretch (2,628 to 2,884, and 4,446 to 4,915), which means the broad middle of the catalog, roughly ranks 200 to 3,000, held its ground or grew slightly. What's actually shrinking is the deep tail beneath that: thousands of niche titles splitting a slice of attention that keeps getting thinner.</p>
   </section>
 
   <section class="table-view">
@@ -508,8 +508,8 @@ footer a { color: var(--ink-secondary); }
   // ---------- hero chart ----------
   var W = 640, H = 240, PAD_L = 34, PAD_R = 16, PAD_T = 16, PAD_B = 28;
   var plotW = W - PAD_L - PAD_R, plotH = H - PAD_T - PAD_B;
-  var yMin = 3.5, yMax = 7.0;
-  var series = data.top10;
+  var yMin = 17.5, yMax = 21.5;
+  var series = data.top100;
 
   function xAt(i) { return PAD_L + (i / (periods.length - 1)) * plotW; }
   function yAt(v) { return PAD_T + (1 - (v - yMin) / (yMax - yMin)) * plotH; }
@@ -524,7 +524,7 @@ footer a { color: var(--ink-secondary); }
   }
 
   // gridlines + y ticks
-  [4, 5, 6, 7].forEach(function (v) {
+  [18, 19, 20, 21].forEach(function (v) {
     var y = yAt(v);
     svg.appendChild(el("line", { class: "chart-grid", x1: PAD_L, x2: W - PAD_R, y1: y, y2: y }));
     var t = el("text", { class: "chart-tick", x: PAD_L - 8, y: y + 3.5, "text-anchor": "end" });
@@ -541,13 +541,13 @@ footer a { color: var(--ink-secondary); }
 
   // line path
   var d = series.map(function (v, i) { return (i === 0 ? "M" : "L") + xAt(i).toFixed(1) + "," + yAt(v).toFixed(1); }).join(" ");
-  svg.appendChild(el("path", { class: "chart-line", d: d, style: "stroke:var(--chart-top10)" }));
+  svg.appendChild(el("path", { class: "chart-line", d: d, style: "stroke:var(--chart-top100)" }));
 
   // low + high annotations
   var minI = series.indexOf(Math.min.apply(null, series));
   var maxI = series.indexOf(Math.max.apply(null, series));
   [minI, maxI].forEach(function (i, idx) {
-    svg.appendChild(el("circle", { class: "chart-dot", cx: xAt(i), cy: yAt(series[i]), r: 4, style: "fill:var(--chart-top10)" }));
+    svg.appendChild(el("circle", { class: "chart-dot", cx: xAt(i), cy: yAt(series[i]), r: 4, style: "fill:var(--chart-top100)" }));
     var above = idx === 1;
     var lbl = el("text", {
       class: "chart-annot", x: xAt(i), y: yAt(series[i]) + (above ? -12 : 18), "text-anchor": "middle"
@@ -622,12 +622,12 @@ footer a { color: var(--ink-secondary); }
   // ---------- sparklines ----------
   var sparkDomains = {
     top1title: [0.55, 1.10],
-    top100: [17.5, 21.5],
+    top10: [3.5, 7.0],
     top1pct: [22.5, 27.2]
   };
   var sparkColors = {
     top1title: "var(--chart-top1title)",
-    top100: "var(--chart-top100)",
+    top10: "var(--chart-top10)",
     top1pct: "var(--chart-top1pct)"
   };
   document.querySelectorAll(".spark").forEach(function (s) {
